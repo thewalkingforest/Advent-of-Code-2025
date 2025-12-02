@@ -2,13 +2,12 @@ package day01
 
 import (
 	"advent-of-code/aoc2025/utils"
-	"fmt"
 	"log"
 	"strconv"
 	"strings"
 )
 
-func Solve1(input string) {
+func Solve1(input string) int {
 	data, err := utils.Ingest(input)
 	if err != nil {
 		log.Fatalf("failed to ingest: %s", err)
@@ -45,10 +44,10 @@ func Solve1(input string) {
 			pointZero += 1
 		}
 	}
-	fmt.Println(pointZero)
+	return pointZero
 }
 
-func Solve2(input string) {
+func Solve2(input string) int {
 	data, err := utils.Ingest(input)
 	if err != nil {
 		log.Fatalf("failed to ingest: %s", err)
@@ -95,5 +94,5 @@ func Solve2(input string) {
 		pointZero += int(clicks)
 		// fmt.Printf("clicks: %d pos: %d pointZero: %d\n", clicks, pos, pointZero)
 	}
-	fmt.Println(pointZero)
+	return pointZero
 }

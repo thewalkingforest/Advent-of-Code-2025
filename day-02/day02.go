@@ -2,7 +2,6 @@ package day02
 
 import (
 	"advent-of-code/aoc2025/utils"
-	"fmt"
 	"log"
 	"slices"
 	"strconv"
@@ -17,7 +16,7 @@ func isValidID_P1(num int64) bool {
 	return l != r
 }
 
-func Solve1(input string) {
+func Solve1(input string) int64 {
 	data, err := utils.Ingest(input)
 	if err != nil {
 		log.Fatalf("failed to ingest: %s", err)
@@ -33,7 +32,7 @@ func Solve1(input string) {
 			}
 		}
 	}
-	fmt.Println(sum)
+	return sum
 }
 
 func allSame(in []string) bool {
@@ -92,7 +91,7 @@ func isValidID_P2(num int64) bool {
 	return valid
 }
 
-func Solve2(input string) {
+func Solve2(input string) int64 {
 	data, err := utils.Ingest(input)
 	if err != nil {
 		log.Fatalf("failed to ingest: %s", err)
@@ -114,5 +113,5 @@ func Solve2(input string) {
 		rounds -= 1
 	}
 
-	fmt.Printf("result: %d\n", sum)
+	return sum
 }
