@@ -59,7 +59,7 @@ func Solve2(input string) {
 	for line := range strings.SplitSeq(data, "\n") {
 		dir := line[0]
 		amtstr := line[1:]
-		fmt.Printf("%s %s\n", string(dir), string(amtstr))
+		// fmt.Printf("%s %s\n", string(dir), string(amtstr))
 		amtw, perr := strconv.ParseUint(amtstr, 10, 32)
 		if perr != nil {
 			log.Fatalf("failed to parse %s as unit8: %s", amtstr, err)
@@ -93,7 +93,7 @@ func Solve2(input string) {
 			pointZero += 1
 		}
 		pointZero += int(clicks)
-		fmt.Printf("clicks: %d pos: %d pointZero: %d\n", clicks, pos, pointZero)
+		// fmt.Printf("clicks: %d pos: %d pointZero: %d\n", clicks, pos, pointZero)
 	}
 	fmt.Println(pointZero)
 }
