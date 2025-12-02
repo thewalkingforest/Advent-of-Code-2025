@@ -10,4 +10,5 @@ func main() {
 
 	input02 := "input/02.txt"
 	day02.Solve1(input02)
+	day02.Solve2(input02)
 }
