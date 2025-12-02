@@ -8,9 +8,6 @@ import (
 	"strings"
 )
 
-func parseData(input string) {
-}
-
 func Solve1(input string) {
 	data, err := utils.Ingest(input)
 	if err != nil {
