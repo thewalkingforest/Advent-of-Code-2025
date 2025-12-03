@@ -15,19 +15,19 @@ func solveAux(input string, lenth int) int64 {
 
 	result := int64(0)
 	for line := range strings.SplitSeq(data, "\n") {
-		elms := strings.Split(line, "")
-		var nums []string
-		idx := 0
+		elms := []byte(line)
+		var selected []byte
+		start := 0
 		for remaining := lenth - 1; remaining >= 0; remaining-- {
-			set := elms[idx : len(elms)-remaining]
-			max, i := utils.MaxIndex(set)
-			if idx < 0 {
+			end := len(elms) - remaining
+			max, i := utils.MaxIndex(elms[start:end])
+			if i < 0 {
 				log.Fatalf("failed to get max element")
 			}
-			nums = append(nums, max)
-			idx += i + 1
+			selected = append(selected, max)
+			start += i + 1
 		}
-		c := utils.ParseI64(strings.Join(nums, ""))
+		c := utils.ParseI64(string(selected))
 		result += c
 	}
 	return result
