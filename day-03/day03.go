@@ -1,0 +1,42 @@
+package day03
+
+import (
+	"advent-of-code/aoc2025/utils"
+	"log"
+	"strings"
+)
+
+func solveAux(input string, lenth int) int64 {
+	data, err := utils.Ingest(input)
+
+	if err != nil {
+		log.Fatalf("failed to ingest: %s", err)
+	}
+
+	result := int64(0)
+	for line := range strings.SplitSeq(data, "\n") {
+		elms := strings.Split(line, "")
+		var nums []string
+		idx := 0
+		for remaining := lenth - 1; remaining >= 0; remaining-- {
+			set := elms[idx : len(elms)-remaining]
+			max, i := utils.MaxIndex(set)
+			if idx < 0 {
+				log.Fatalf("failed to get max element")
+			}
+			nums = append(nums, max)
+			idx += i + 1
+		}
+		c := utils.ParseI64(strings.Join(nums, ""))
+		result += c
+	}
+	return result
+}
+
+func Solve1(input string) int64 {
+	return solveAux(input, 2)
+}
+
+func Solve2(input string) int64 {
+	return solveAux(input, 12)
+}
