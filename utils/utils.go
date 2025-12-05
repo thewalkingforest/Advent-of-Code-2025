@@ -17,7 +17,7 @@ func Ingest(name string) (string, error) {
 	return input, nil
 }
 
-func ParseI64(i string) int64 {
+func ParseInt64(i string) int64 {
 	s, err := strconv.ParseInt(i, 10, 64)
 	if err != nil {
 		log.Fatalf("failed to ingest: %s", err)
@@ -25,7 +25,7 @@ func ParseI64(i string) int64 {
 	return int64(s)
 }
 
-func ParseI32(i string) int32 {
+func ParseInt32(i string) int32 {
 	s, err := strconv.ParseInt(i, 10, 32)
 	if err != nil {
 		log.Fatalf("failed to ingest: %s", err)

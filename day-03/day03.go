@@ -27,7 +27,7 @@ func solveAux(input string, lenth int) int64 {
 			selected = append(selected, max)
 			start += i + 1
 		}
-		c := utils.ParseI64(string(selected))
+		c := utils.ParseInt64(string(selected))
 		result += c
 	}
 	return result

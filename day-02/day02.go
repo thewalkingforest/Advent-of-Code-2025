@@ -24,8 +24,8 @@ func Solve1(input string) int64 {
 	sum := int64(0)
 	for idRange := range strings.SplitSeq(data, ",") {
 		bounds := strings.Split(idRange, "-")
-		start := utils.ParseI64(bounds[0])
-		end := utils.ParseI64(bounds[1])
+		start := utils.ParseInt64(bounds[0])
+		end := utils.ParseInt64(bounds[1])
 		for i := start; i <= end; i++ {
 			if !isValidID_P1(i) {
 				sum += i
@@ -103,8 +103,8 @@ func Solve2(input string) int64 {
 			break
 		}
 		bounds := strings.Split(idRange, "-")
-		start := utils.ParseI64(bounds[0])
-		end := utils.ParseI64(bounds[1])
+		start := utils.ParseInt64(bounds[0])
+		end := utils.ParseInt64(bounds[1])
 		for i := start; i <= end; i++ {
 			if !isValidID_P2(i) {
 				sum += i
