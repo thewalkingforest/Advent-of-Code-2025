@@ -7,6 +7,7 @@ import (
 	day02 "advent-of-code/aoc2025/day-02"
 	day03 "advent-of-code/aoc2025/day-03"
 	day04 "advent-of-code/aoc2025/day-04"
+	day05 "advent-of-code/aoc2025/day-05"
 )
 
 func main() {
@@ -22,7 +23,11 @@ func main() {
 	fmt.Println(day03.Solve1(input03))
 	fmt.Println(day03.Solve2(input03))
 
-	input04 := "input/04-test.txt"
+	input04 := "input/04.txt"
 	fmt.Println(day04.Solve1(input04))
 	fmt.Println(day04.Solve2(input04))
+
+	input05 := "input/05.txt"
+	fmt.Println(day05.Solve1(input05))
+	fmt.Println(day05.Solve2(input05))
 }
