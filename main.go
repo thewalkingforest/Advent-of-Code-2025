@@ -9,6 +9,7 @@ import (
 	day04 "advent-of-code/aoc2025/day-04"
 	day05 "advent-of-code/aoc2025/day-05"
 	day06 "advent-of-code/aoc2025/day-06"
+	day07 "advent-of-code/aoc2025/day-07"
 )
 
 func main() {
@@ -37,4 +38,8 @@ func main() {
 	input06 := "input/06.txt"
 	day06.Solve1(input06)
 	day06.Solve2(input06)
+
+	input07 := "input/07.txt"
+	day07.Solve1(input07)
+	day07.Solve2(input07)
 }
