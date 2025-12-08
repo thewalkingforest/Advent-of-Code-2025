@@ -37,10 +37,10 @@ func main() {
 	fmt.Println(day05.Solve2(input05))
 
 	input06 := "input/06.txt"
-	day06.Solve1(input06)
-	day06.Solve2(input06)
+	fmt.Println(day06.Solve1(input06))
+	fmt.Println(day06.Solve2(input06))
 
 	input07 := "input/07.txt"
-	day07.Solve1(input07)
-	day07.Solve2(input07)
+	fmt.Println(day07.Solve1(input07))
+	fmt.Println(day07.Solve2(input07))
 }
