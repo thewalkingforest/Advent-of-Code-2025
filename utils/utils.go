@@ -20,7 +20,7 @@ func Ingest(name string) (string, error) {
 func ParseInt64(i string) int64 {
 	s, err := strconv.ParseInt(i, 10, 64)
 	if err != nil {
-		log.Fatalf("failed to ingest: %s", err)
+		log.Fatalf("failed to parse int64: %s", err)
 	}
 	return int64(s)
 }
@@ -28,7 +28,7 @@ func ParseInt64(i string) int64 {
 func ParseInt32(i string) int32 {
 	s, err := strconv.ParseInt(i, 10, 32)
 	if err != nil {
-		log.Fatalf("failed to ingest: %s", err)
+		log.Fatalf("failed to parse int32: %s", err)
 	}
 	return int32(s)
 }
@@ -36,7 +36,7 @@ func ParseInt32(i string) int32 {
 func ParseInt(i string) int {
 	s, err := strconv.ParseInt(i, 10, 32)
 	if err != nil {
-		log.Fatalf("failed to ingest: %s", err)
+		log.Fatalf("failed to parse int: %s", err)
 	}
 	return int(s)
 }
@@ -55,4 +55,19 @@ func MaxIndex[S ~[]E, E cmp.Ordered](x S) (E, int) {
 		}
 	}
 	return max, idx
+}
+
+func IndexAll(s string, substr string) []int {
+	var idxs []int
+
+	i := 0
+	found := strings.Index(s, substr)
+	for found != -1 && i < len(s) {
+		i += found
+		idxs = append(idxs, i)
+		i += len(substr)
+		found = strings.Index(s[i:], substr)
+	}
+
+	return idxs
 }
