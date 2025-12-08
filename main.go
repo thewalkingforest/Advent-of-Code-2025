@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	day01 "advent-of-code/aoc2025/day-01"
 	day02 "advent-of-code/aoc2025/day-02"
