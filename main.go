@@ -8,9 +8,12 @@ import (
 	day03 "advent-of-code/aoc2025/day-03"
 	day04 "advent-of-code/aoc2025/day-04"
 	day05 "advent-of-code/aoc2025/day-05"
+	day06 "advent-of-code/aoc2025/day-06"
 )
 
 func main() {
+	log.SetFlags(log.Lshortfile | log.LstdFlags)
+
 	input01 := "input/01.txt"
 	fmt.Println(day01.Solve1(input01))
 	fmt.Println(day01.Solve2(input01))
@@ -30,4 +33,8 @@ func main() {
 	input05 := "input/05.txt"
 	fmt.Println(day05.Solve1(input05))
 	fmt.Println(day05.Solve2(input05))
+
+	input06 := "input/06.txt"
+	day06.Solve1(input06)
+	day06.Solve2(input06)
 }
